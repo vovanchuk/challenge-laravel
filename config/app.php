@@ -185,6 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
+        RichanFongdasen\EloquentBlameable\ServiceProvider::class,
 
         /*
          * Application Service Providers...

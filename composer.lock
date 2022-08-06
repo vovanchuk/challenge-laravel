@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a90a89e8e872849ca097ec332863f105",
+    "content-hash": "c80d1cae252db252c151e01627894128",
     "packages": [
         {
             "name": "brick/math",
@@ -2823,6 +2823,76 @@
                 }
             ],
             "time": "2022-03-27T21:42:02+00:00"
+        },
+        {
+            "name": "richan-fongdasen/eloquent-blameable",
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/richan-fongdasen/eloquent-blameable.git",
+                "reference": "66d7f04667a8c40c7b88a9d91ef3d5b18d97c2ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/richan-fongdasen/eloquent-blameable/zipball/66d7f04667a8c40c7b88a9d91ef3d5b18d97c2ac",
+                "reference": "66d7f04667a8c40c7b88a9d91ef3d5b18d97c2ac",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^8.0|^9.0",
+                "illuminate/support": "^8.0|^9.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3",
+                "nunomaduro/larastan": "^1.0|^2.0",
+                "orchestra/database": "^6.0|dev-master",
+                "orchestra/testbench": "^6.0|^7.0",
+                "phpmd/phpmd": "^2.11",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-strict-rules": "^1.1",
+                "phpunit/phpunit": "^9.5",
+                "sebastian/phpcpd": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "RichanFongdasen\\EloquentBlameable\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "RichanFongdasen\\EloquentBlameable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Richan Fongdasen",
+                    "email": "richan.fongdasen@gmail.com"
+                }
+            ],
+            "description": "Blameable behavior implementation for your Eloquent Model in Laravel",
+            "homepage": "https://github.com/richan-fongdasen/eloquent-blameable",
+            "keywords": [
+                "Blameable",
+                "eloquent",
+                "laravel",
+                "laravel-package"
+            ],
+            "support": {
+                "issues": "https://github.com/richan-fongdasen/eloquent-blameable/issues",
+                "source": "https://github.com/richan-fongdasen/eloquent-blameable"
+            },
+            "time": "2022-02-12T09:43:23+00:00"
         },
         {
             "name": "symfony/console",
