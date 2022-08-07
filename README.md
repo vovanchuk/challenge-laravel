@@ -13,7 +13,7 @@
     -w /var/www/html \
     laravelsail/php81-composer:latest \
     composer install --ignore-platform-reqs` (Installing dependencies without the need to use a local environment)
-- `alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail' (optional)
+- `alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail` (optional)
 - `sail up`
 - `sail artisan key:generate`
 - `sail artisan migrate`
