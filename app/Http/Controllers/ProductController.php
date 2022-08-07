@@ -47,8 +47,11 @@ class ProductController extends Controller
 
     public function total()
     {
+        $sum = Product::all()->sum('price');
+        $rounded = round($sum, 2);
+
         return response()->json([
-            'total' => Product::all()->sum('price')
+            'total' => $rounded
         ]);
     }
 }
