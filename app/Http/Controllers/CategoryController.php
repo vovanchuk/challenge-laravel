@@ -11,19 +11,19 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return CategoryResource::collection(Category::all());
+        return response()->json(CategoryResource::collection(Category::all()));
     }
 
     public function store(StoreCategoryRequest $request)
     {
         $category = Category::create($request->validated());
 
-        return new CategoryResource($category);
+        return response()->json(new CategoryResource($category), 201);
     }
 
     public function show(Category $category)
     {
-        return new CategoryResource($category);
+        return response()->json(new CategoryResource($category));
     }
 
     public function update(UpdateCategoryRequest $request, Category $category)
@@ -31,7 +31,7 @@ class CategoryController extends Controller
         $category->fill($request->validated());
         $category->save();
 
-        return new CategoryResource($category);
+        return response()->json(new CategoryResource($category));
     }
 
     public function destroy(Category $category)

@@ -6,24 +6,27 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
+use Illuminate\Http\Response;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        return ProductResource::collection(Product::with(['category'])->get());
+        $products = Product::with(['category'])->get();
+
+        return response()->json(ProductResource::collection($products));
     }
 
     public function store(StoreProductRequest $request)
     {
         $product = Product::create($request->validated());
 
-        return new ProductResource($product);
+        return response()->json(new ProductResource($product), Response::HTTP_CREATED);
     }
 
     public function show(Product $product)
     {
-        return new ProductResource($product);
+        return response()->json(new ProductResource($product));
     }
 
     public function update(UpdateProductRequest $request, Product $product)
@@ -32,20 +35,20 @@ class ProductController extends Controller
 
         $product->save();
 
-        return new ProductResource($product);
+        return response()->json(new ProductResource($product));
     }
 
     public function destroy(Product $product)
     {
         $product->delete();
 
-        return response('', 204);
+        return response('', Response::HTTP_NO_CONTENT);
     }
 
     public function total()
     {
-        return [
+        return response()->json([
             'total' => Product::all()->sum('price')
-        ];
+        ]);
     }
 }
